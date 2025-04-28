@@ -49,7 +49,7 @@
       <div class="glass">
         <h2 class="section-title">1. סקירה טכנית</h2>
         <p>מערכת SPA ב-React 18 ו-Next.js 14 עם שילוב SSR/CSR לאופטימיזציית SEO וטעינה מהירה.<br>
-        עיצוב Frontend ב-Tailwind CSS, ו-Backend ב-Firebase Auth, Firestore ו-Node.js 18.</p>
+        עיצוב Frontend ב-Tailwind CSS, ו-Backend ב-Firebase Auth, Firestore ו-Node.js 22.</p>
       </div>
     </section>
 
@@ -58,9 +58,8 @@
         <h2 class="section-title">2. מטרות מרכזיות</h2>
         <ul>
           <li>זמני טעינה &lt;2 שניות (Lighthouse ≥90).</li>
-          <li>תמיכה ב-PWA עם Service Workers ו-Caching חכם.</li>
           <li>דפי מוצר דינמיים בעזרת SSG/ISR של Next.js.</li>
-          <li>Scale אופקי מלא ב-Vercel/Railway.</li>
+          <li>Scale הוריזונטלי מלא ב-Vercel/Railway.</li>
         </ul>
       </div>
     </section>
@@ -69,24 +68,26 @@
       <div class="glass">
         <h2 class="section-title">3. תכונות עיקריות</h2>
         <ul>
-          <li>טמפלייטים UI מבוססי JSON עם עדכון בזמן אמת.</li>
-          <li>ניהול מוצרים: images, variants[], price, inventory ב-Firestore.</li>
-          <li>עידכוני הזמנות בזמן אמת באמצעות Listeners.</li>
-          <li>אינטגרציה עם תשלום ישראלי (ביט, PayMe, ישראכרט).</li>
-          <li>חיבור דומיין אוטומטי דרך DNS/CNAME.</li>
-          <li>ניוזלטרים באמצעות Firebase Functions.</li>
-          <li>קופונים בדינמיק לוגיק ב-Cloud Functions.</li>
-          <li>דשבורד BI ל-Metrics עם Recharts.</li>
+          <li>תבניות UI מותאמות אישית עם TailwindCSS ו-React (TypeScript)</li>
+          <li>ניהול מוצרים מושלם: הוספה/עריכה/מחיקה עם תמיכה בתמונות ראשיות ומשניות, וריאנטים, קטגוריות, מחיר בסיס, מלאי בזמן אמת, תיאורי מוצר מפורטים באמצעות עורך Rich Text (כותרות, הדגשה, רשימות, קישורי מדיה), יבוא/ייצוא CSV ואודיט לוג – כל הנתונים מאוחסנים ב-PostgreSQL</li>
+          <li>עגלת קניות מותאמת אישית – נבנתה מאפס בקוד פנימי ללא שימוש בספריות צד שלישי</li>
+          <li>אינטגרציה עם PayPal ותשלום בכרטיס אשראי</li>
+          <li>פריסה אוטומטית וחיבור דומיין מותאם אישית ב-Vercel</li>
+          <li>מערכת קופונים ומבצעים עם לוגיקה דינמית על בסיס כמות, ערך או סוג משתמש</li>
+          <li>לוח בקרה BI להצגת מדדים וסטטיסטיקות (מכירות, רווח, מלאי) באמצעות Recharts</li>
+          <li>ניהול משתמשים והרשאות מותאם אישית – נבנה מאפס בקוד פנימי ללא שימוש בספריות צד שלישי</li>
         </ul>
       </div>
     </section>
+    
+    
 
     <section>
       <div class="glass">
         <h2 class="section-title">4. סטאק טכנולוגי</h2>
         <ul>
           <li><strong>Frontend:</strong> React 18, Next.js 14, Tailwind CSS.</li>
-          <li><strong>Backend:</strong> Node.js 18, Firebase Auth & Firestore.</li>
+          <li><strong>Backend:</strong> Node.js 22, Firebase Auth & Firestore.</li>
           <li><strong>Deployment:</strong> Vercel CI/CD / Railway.</li>
           <li><strong>Storage:</strong> Firebase Storage / CDN.</li>
         </ul>
@@ -108,8 +109,8 @@
         <h2 class="section-title">6. תמחור</h2>
         <ul>
           <li>בסיס 2,500₪ – תבנית סטנדרטית.</li>
-          <li>פלוס 3,500₪ – התאמות UI ו-Support 1.</li>
-          <li>פרימיום 5,000₪ – עיצוב ממותג ו-Support 2.</li>
+          <li>פלוס 3,500₪ – התאמות UI ו-Support Services.</li>
+          <li>פרימיום 5,000₪ – עיצוב ממותג ו-Support Services Advanced.</li>
         </ul>
         <h3>דמי תחזוקה:</h3>
         <ul>
@@ -124,12 +125,18 @@
       <div class="glass">
         <h2 class="section-title">7. יתרונות תחרותיים</h2>
         <ul>
-          <li>RTL מובנה ורכיבים Configurable.</li>
-          <li>Bundle קטן &lt;200KB אחרי Tree-shaking.</li>
-          <li>תיעוד API ו-SDK מובנה.</li>
+          <li>עגלת קניות וניהול משתמשים מותאמים אישית – מבוססי קוד פנימי ללא תלות בספריות צד שלישי</li>
+          <li>אינטגרציה ישירה עם PayPal ותשלום בכרטיס אשראי – קלות שימוש ואמינות</li>
+          <li>ניהול מוצרים מתקדם ב-PostgreSQL: מלאי בזמן אמת, וריאנטים, תמונות מרובות ויבוא/ייצואו</li>
+          <li>מנוע קופונים ודינמיק מבצעים – לוגיקה גמישה לפי כמות, ערך וסוג משתמש</li>
+          <li>פריסה מהירה וחיבור דומיין אוטומטי ב-Vercel ללא צורך בידע טכני</li>
+          <li>לוח BI אינטראקטיבי עם Recharts להצגת מדדי מכירות, רווחים ומלאי בזמן אמת</li>
+          <li>ממשק UI בקצה קדמי ב-React + TypeScript ו-TailwindCSS – פיתוח מהיר וערכות עיצוב ניתנות להתאמה מלאה</li>
+          <li>תמיכה מלאה ב-RTL – חוויית משתמש מושלמת בעברית וגלישה מימין לשמאל</li>
         </ul>
       </div>
     </section>
+    
 
     <section>
       <div class="glass">
