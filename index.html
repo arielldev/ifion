@@ -3,175 +3,190 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>איפיון פרוייקט – ReadySetStores</title>
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap" rel="stylesheet">
+  <title>ReadySetStores - Ifion</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@0.5.21/dist/vanta.net.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/ScrollTrigger.min.js"></script>
   <style>
-    body {
-      background: #f2f2f2;
-      font-family: 'Heebo', sans-serif;
-      color: #333;
-      direction: rtl;
-      text-align: right;
-      line-height: 1.6;
-      margin: 0;
-      padding: 0;
+    :root {
+      --bg-color: #000000;
+      --glass-bg: rgba(18, 24, 34, 0.1);
+      --glass-border: rgba(150, 154, 163, 0.3);
+      --text-color: #ffffff;
+      --accent-color: #bab9b6;
     }
-    .container {
-      max-width: 800px;
-      margin: 40px auto;
-      padding: 0 20px;
+    *::-webkit-scrollbar { width: 12px; }
+    *::-webkit-scrollbar-track { background: var(--bg-color); }
+    *::-webkit-scrollbar-thumb { background: var(--accent-color); border-radius: 6px; border: 3px solid var(--bg-color); }
+    * { scrollbar-width: thin; scrollbar-color: var(--accent-color) var(--bg-color); margin: 0; padding: 0; box-sizing: border-box; }
+    html, body { width: 100%; min-height: 100%; background: var(--bg-color); color: var(--text-color); font-family: 'Heebo', sans-serif; direction: rtl; overflow-x: hidden; }
+    .container { width: 100%; max-width: 960px; margin: 0 auto; padding: 40px 20px; position: relative; z-index: 2; }
+    .glass {
+      width: 100%; background: var(--glass-bg); backdrop-filter: blur(12px);
+      border: 1px solid var(--glass-border); border-radius: 16px;
+      padding: 40px; margin: 60px 0; transform-style: preserve-3d; transition: transform 0.3s ease;
     }
-    header {
-      text-align: center;
-      margin-bottom: 40px;
-    }
-    header h1 {
-      margin: 0;
-      font-size: 2em;
-      font-weight: 700;
-      color: #2c3e50;
-    }
-    header p {
-      margin: 5px 0;
-      font-size: 1em;
-      font-weight: 500;
-    }
-    .card {
-      background: #fff;
-      border-radius: 8px;
-      padding: 20px;
-      margin-bottom: 20px;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-    .section-title {
-      font-size: 1.3em;
-      margin-bottom: 10px;
-      font-weight: 600;
-      color: #2c3e50;
-      border-bottom: 2px solid #e0e0e0;
-      padding-bottom: 5px;
-    }
-    ul {
-      padding-right: 20px;
-      margin: 0;
-      list-style-position: inside;
-    }
-    ul li {
-      margin-bottom: 8px;
-    }
-    .subsection {
-      margin-top: 15px;
-    }
-    .subsection .section-title {
-      font-size: 1.1em;
-      margin-top: 15px;
-      color: #34495e;
-    }
+    header.glass { text-align: center; padding: 100px 20px; cursor: move; }
+    header.glass h1 { font-size: 3.5rem; color: var(--accent-color); text-shadow: 0 0 8px var(--accent-color); }
+    header.glass p { font-size: 1.2rem; margin-top: 10px; }
+    .section-title { font-size: 2rem; color: var(--accent-color); text-align: center; margin-bottom: 20px; position: relative; }
+    .section-title::after { content: ''; width: 60px; height: 3px; background: var(--accent-color); position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); }
+    ul { list-style-position: inside; margin: 20px 0; padding-right: 20px; }
+    ul li { margin-bottom: 12px; }
+    p { margin: 10px 0; }
+    footer.glass { text-align: center; font-size: 0.9rem; color: #ccc; padding: 20px; margin: 80px 0; }
   </style>
 </head>
 <body>
   <div class="container">
-    <header>
-      <h1>איפיון פרוייקט – ReadySetStores</h1>
-      <p><strong>בעלים:</strong> אריאל אלקסלאסי, אוריי ריספאלד</p>
-      <p><strong>קהל יעד:</strong> עסקים קטנים ובינוניים בישראל</p>
+    <header class="glass" id="hero">
+      <h1>ReadySetStores - איפיון פרוייקט</h1>
+      <h3>פלטפורמה לבניית וניהול חנויות אונליין</h3>
     </header>
 
-    <section class="card">
-      <h2 class="section-title">1. סקירה טכנית</h2>
-      <p>מערכת SPA מבוססת React 18 ו-Next.js 14 עם SSR ו-CSR לשילוב SEO וטעינה מהירה.  
-      ה-frontend מעוצב באמצעות Tailwind CSS 3.0.  
-      ה-backend משתמש ב-Firebase Authentication, Firestore (v10 SDK) לאחסון מבני נתונים, ו-Node.js 18 לפיתוח פונקציות Serverless.</p>
-    </section>
-
-    <section class="card">
-      <h2 class="section-title">2. מטרות מרכזיות</h2>
-      <ul>
-        <li>זמני טעינה <2 שניות (Lighthouse Performance ≥ 90).</li>
-        <li>תמיכה ב-PWA עם Service Workers ו-Caching אוטומטי.</li>
-        <li>גרסת דפי מוצר דינמית באמצעות SSG/ISR של Next.js.</li>
-        <li>יכולת Scale אופקי בענן (Vercel/Railway).</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2 class="section-title">3. תכונות עיקריות</h2>
-      <ul>
-        <li>טמפלייטים דינמיים ל-UI הניתנים להגדרה בקבצי JSON.</li>
-        <li>ניהול מוצרים: Collection “products” ב-Firestore עם שדות images, variants[], price, inventory.</li>
-        <li>עדכון סטטוס הזמנות בזמן אמת בעזרת Firestore listeners.</li>
-        <li>אינטגרציה עם API של ספקי תשלום ידועיים וביטוחים (כרגע פייפאל ואשראי).</li>
-        <li>DNS ו-CNAME לחיבור דומיין מותאם אוטומטי.</li>
-        <li>API לאיסוף כתובות מייל ושליחת ניוזלטרים באמצעות Firebase Functions.</li>
-        <li>מערכת קופונים מבוססת Business Logic ב-Cloud Functions.</li>
-        <li>דשבורד BI להצגת Metrics (pageViews, conversionRate, revenue) באמצעות Recharts.</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2 class="section-title">4. סטאק טכנולוגי</h2>
-      <ul>
-        <li><strong>Frontend:</strong> React 18, Next.js 14, Tailwind CSS 3</li>
-        <li><strong>Backend:</strong> Node.js 18, Firebase Auth & Firestore v10</li>
-        <li><strong>Deployment:</strong> Vercel (CI/CD) / Railway</li>
-        <li><strong>Storage:</strong> Firebase Storage / CDN (Cloudflare)</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2 class="section-title">5. תפקידי משתמשים</h2>
-      <ul>
-        <li><strong>Owner:</strong> CRUD מלא על Firestore collections, הגדרות store דרך Admin Panel.</li>
-        <li><strong>Client:</strong> Customer-Facing UI, Checkout flow באמצעות Stripe API.</li>
-        <li><strong>Admin:</strong> Dashboard למעקב System Logs, Error Monitoring (Sentry) ו-Analytics.</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2 class="section-title">6. תמחור</h2>
-      <div class="subsection">
-        <h3 class="section-title">תשלום חד-פעמי</h3>
-        <ul>
-          <li>בסיס (2,500 ₪) – תבנית סטנדרטית.</li>
-          <li>פלוס (3,500 ₪) – תבנית עם התאמות UI ו-Support Level 1.</li>
-          <li>פרימיום (5,000 ₪) – עיצוב מותאם, Support Level 2, שדרוג רוחב פס.</li>
-        </ul>
+    <section>
+      <div class="glass">
+        <h2 class="section-title">1. סקירה טכנית</h2>
+        <p>מערכת SPA ב-React 18 ו-Next.js 14 עם שילוב SSR/CSR לאופטימיזציית SEO וטעינה מהירה.<br>
+        עיצוב Frontend ב-Tailwind CSS, ו-Backend ב-Firebase Auth, Firestore ו-Node.js 18.</p>
       </div>
-      <div class="subsection">
-        <h3 class="section-title">דמי תחזוקה חודשיים</h3>
+    </section>
+
+    <section>
+      <div class="glass">
+        <h2 class="section-title">2. מטרות מרכזיות</h2>
         <ul>
-          <li>מינימום 30 ₪/חודש.</li>
-          <li>לקוחות בסיס/פלוס: 50% מהעלות החודשית.</li>
-          <li>לקוחות פרימיום: 30% מהעלות החודשית.</li>
+          <li>זמני טעינה &lt;2 שניות (Lighthouse ≥90).</li>
+          <li>תמיכה ב-PWA עם Service Workers ו-Caching חכם.</li>
+          <li>דפי מוצר דינמיים בעזרת SSG/ISR של Next.js.</li>
+          <li>Scale אופקי מלא ב-Vercel/Railway.</li>
         </ul>
       </div>
     </section>
 
-    <section class="card">
-      <h2 class="section-title">7. יתרונות תחרותיים</h2>
-      <ul>
-        <li>RTL מובנה בממשק וברכיבים.</li>
-        <li>Bundle גודל <200 KB אחרי Tree-shaking.</li>
-        <li>Components מודולריים ו-Configurable.</li>
-        <li>תיעוד API ו-SDK למפתחים.</li>
-      </ul>
+    <section>
+      <div class="glass">
+        <h2 class="section-title">3. תכונות עיקריות</h2>
+        <ul>
+          <li>טמפלייטים UI מבוססי JSON עם עדכון בזמן אמת.</li>
+          <li>ניהול מוצרים: images, variants[], price, inventory ב-Firestore.</li>
+          <li>עידכוני הזמנות בזמן אמת באמצעות Listeners.</li>
+          <li>אינטגרציה עם תשלום ישראלי (ביט, PayMe, ישראכרט).</li>
+          <li>חיבור דומיין אוטומטי דרך DNS/CNAME.</li>
+          <li>ניוזלטרים באמצעות Firebase Functions.</li>
+          <li>קופונים בדינמיק לוגיק ב-Cloud Functions.</li>
+          <li>דשבורד BI ל-Metrics עם Recharts.</li>
+        </ul>
+      </div>
     </section>
 
-    <section class="card">
-      <h2 class="section-title">8. תוכניות עתידיות</h2>
-      <ul>
-        <li>הוספת Marketplace לתבניות עיצוב.</li>
-        <li>ממשק מתכנתים (REST & GraphQL API).</li>
-        <li>כלי Advanced Marketing: Popups, Timers, A/B Testing.</li>
-        <li>פיתוח שיתוף קהילתי של תבניות ומשאבים.</li>
-      </ul>
+    <section>
+      <div class="glass">
+        <h2 class="section-title">4. סטאק טכנולוגי</h2>
+        <ul>
+          <li><strong>Frontend:</strong> React 18, Next.js 14, Tailwind CSS.</li>
+          <li><strong>Backend:</strong> Node.js 18, Firebase Auth & Firestore.</li>
+          <li><strong>Deployment:</strong> Vercel CI/CD / Railway.</li>
+          <li><strong>Storage:</strong> Firebase Storage / CDN.</li>
+        </ul>
+      </div>
     </section>
 
-    <section class="card">
-      <h2 class="section-title">9. סטטוס נוכחי</h2>
-      <p>Client v1.0-alpha (Frontend יציב), Admin Dashboard v0.5-beta.  
-      פגישה שלישית עם הלקוח ל-Review שינויים מתוכננת בקרוב.</p>
+    <section>
+      <div class="glass">
+        <h2 class="section-title center">5. תפקידי משתמשים</h2>
+        <ul dir="ltr">
+          <li><strong>Client:</strong> Customer UI ו-Checkout Custom Made.</li>
+          <li><strong>Admin:</strong> System Logs, Sentry Error Monitoring ו-Analytics.</li>
+        </ul>
+      </div>
     </section>
+
+    <section>
+      <div class="glass">
+        <h2 class="section-title">6. תמחור</h2>
+        <ul>
+          <li>בסיס 2,500₪ – תבנית סטנדרטית.</li>
+          <li>פלוס 3,500₪ – התאמות UI ו-Support 1.</li>
+          <li>פרימיום 5,000₪ – עיצוב ממותג ו-Support 2.</li>
+        </ul>
+        <h3>דמי תחזוקה:</h3>
+        <ul>
+          <li>מינימום 30₪/חודש.</li>
+          <li>50% מהעלות ללקוחי בסיס/פלוס.</li>
+          <li>30% ללקוחות פרימיום.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="glass">
+        <h2 class="section-title">7. יתרונות תחרותיים</h2>
+        <ul>
+          <li>RTL מובנה ורכיבים Configurable.</li>
+          <li>Bundle קטן &lt;200KB אחרי Tree-shaking.</li>
+          <li>תיעוד API ו-SDK מובנה.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="glass">
+        <h2 class="section-title">8. תוכניות עתידיות</h2>
+        <ul>
+          <li>Marketplace לתבניות UI.</li>
+          <li>REST & GraphQL API למפתחים.</li>
+          <li>כלי Advanced Marketing – Popups, Timers, A/B Testing.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <div class="glass">
+        <h2 class="section-title">9. סטטוס נוכחי</h2>
+        <p>v1.0-alpha Frontend יציב, v0.5-beta Admin Dashboard. פגישה קרובה ל-Review שינויים.</p>
+      </div>
+    </section>
+
+    <footer class="glass">
+      <p>&copy; 2025 ReadySetStores | כל הזכויות שמורות</p>
+    </footer>
   </div>
+
+  <script>
+    VANTA.NET({
+      el: document.body,
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200,
+      minWidth: 200,
+      scale: 1,
+      scaleMobile: 1,
+      backgroundColor: 0x000000,
+      color: 0xbab9b6,
+      points: 20,
+      maxDistance: 30
+    });
+    gsap.utils.toArray('.glass').forEach(el => {
+      gsap.fromTo(el,
+        { rotationX: -15, opacity: 0 },
+        { rotationX: 0, opacity: 1, duration: 1.2,
+          scrollTrigger: { trigger: el, start: 'top 90%', end: 'top 60%', scrub: true }
+        }
+      );
+    });
+    const hero = document.getElementById('hero');
+    hero.addEventListener('mousemove', e => {
+      const r = hero.getBoundingClientRect();
+      const x = (e.clientX - r.left - r.width / 2) / 25;
+      const y = -(e.clientY - r.top - r.height / 2) / 25;
+      gsap.to(hero, { rotationY: x, rotationX: y, duration: 0.3 });
+    });
+    hero.addEventListener('mouseleave', () => {
+      gsap.to(hero, { rotationY: 0, rotationX: 0, duration: 0.6, ease: 'power3.out' });
+    });
+  </script>
 </body>
 </html>
