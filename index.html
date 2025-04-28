@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>איפיון טכני – ReadySetStores</title>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #f2f2f2;
+      font-family: 'Heebo', sans-serif;
+      color: #333;
+      direction: rtl;
+      text-align: right;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    header {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+      font-weight: 700;
+      color: #2c3e50;
+    }
+    header p {
+      margin: 5px 0;
+      font-size: 1em;
+      font-weight: 500;
+    }
+    .card {
+      background: #fff;
+      border-radius: 8px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .section-title {
+      font-size: 1.3em;
+      margin-bottom: 10px;
+      font-weight: 600;
+      color: #2c3e50;
+      border-bottom: 2px solid #e0e0e0;
+      padding-bottom: 5px;
+    }
+    ul {
+      padding-right: 20px;
+      margin: 0;
+      list-style-position: inside;
+    }
+    ul li {
+      margin-bottom: 8px;
+    }
+    .subsection {
+      margin-top: 15px;
+    }
+    .subsection .section-title {
+      font-size: 1.1em;
+      margin-top: 15px;
+      color: #34495e;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>איפיון טכני – ReadySetStores</h1>
+      <p><strong>בעלים:</strong> אריאל אלקסלאסי, אוריי ריספאלד</p>
+      <p><strong>קהל יעד:</strong> עסקים קטנים ובינוניים בישראל</p>
+    </header>
+
+    <section class="card">
+      <h2 class="section-title">1. סקירה טכנית</h2>
+      <p>מערכת SPA מבוססת React 18 ו-Next.js 14 עם SSR ו-CSR לשילוב SEO וטעינה מהירה.  
+      ה-frontend מעוצב באמצעות Tailwind CSS 3.0.  
+      ה-backend משתמש ב-Firebase Authentication, Firestore (v10 SDK) לאחסון מבני נתונים, ו-Node.js 18 לפיתוח פונקציות Serverless.</p>
+    </section>
+
+    <section class="card">
+      <h2 class="section-title">2. מטרות מרכזיות</h2>
+      <ul>
+        <li>זמני טעינה <2 שניות (Lighthouse Performance ≥ 90).</li>
+        <li>תמיכה ב-PWA עם Service Workers ו-Caching אוטומטי.</li>
+        <li>גרסת דפי מוצר דינמית באמצעות SSG/ISR של Next.js.</li>
+        <li>יכולת Scale אופקי בענן (Vercel/Railway).</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2 class="section-title">3. תכונות עיקריות</h2>
+      <ul>
+        <li>טמפלייטים דינמיים ל-UI הניתנים להגדרה בקבצי JSON.</li>
+        <li>ניהול מוצרים: Collection “products” ב-Firestore עם שדות images, variants[], price, inventory.</li>
+        <li>עדכון סטטוס הזמנות בזמן אמת בעזרת Firestore listeners.</li>
+        <li>אינטגרציה עם API של ספקי תשלום ידועיים וביטוחים (כרגע פייפאל ואשראי).</li>
+        <li>DNS ו-CNAME לחיבור דומיין מותאם אוטומטי.</li>
+        <li>API לאיסוף כתובות מייל ושליחת ניוזלטרים באמצעות Firebase Functions.</li>
+        <li>מערכת קופונים מבוססת Business Logic ב-Cloud Functions.</li>
+        <li>דשבורד BI להצגת Metrics (pageViews, conversionRate, revenue) באמצעות Recharts.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2 class="section-title">4. סטאק טכנולוגי</h2>
+      <ul>
+        <li><strong>Frontend:</strong> React 18, Next.js 14, Tailwind CSS 3</li>
+        <li><strong>Backend:</strong> Node.js 18, Firebase Auth & Firestore v10</li>
+        <li><strong>Deployment:</strong> Vercel (CI/CD) / Railway</li>
+        <li><strong>Storage:</strong> Firebase Storage / CDN (Cloudflare)</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2 class="section-title">5. תפקידי משתמשים</h2>
+      <ul>
+        <li><strong>Owner:</strong> CRUD מלא על Firestore collections, הגדרות store דרך Admin Panel.</li>
+        <li><strong>Client:</strong> Customer-Facing UI, Checkout flow באמצעות Stripe API.</li>
+        <li><strong>Admin:</strong> Dashboard למעקב System Logs, Error Monitoring (Sentry) ו-Analytics.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2 class="section-title">6. תמחור</h2>
+      <div class="subsection">
+        <h3 class="section-title">תשלום חד-פעמי</h3>
+        <ul>
+          <li>בסיס (2,500 ₪) – תבנית סטנדרטית.</li>
+          <li>פלוס (3,500 ₪) – תבנית עם התאמות UI ו-Support Level 1.</li>
+          <li>פרימיום (5,000 ₪) – עיצוב מותאם, Support Level 2, שדרוג רוחב פס.</li>
+        </ul>
+      </div>
+      <div class="subsection">
+        <h3 class="section-title">דמי תחזוקה חודשיים</h3>
+        <ul>
+          <li>מינימום 30 ₪/חודש.</li>
+          <li>לקוחות בסיס/פלוס: 50% מהעלות החודשית.</li>
+          <li>לקוחות פרימיום: 30% מהעלות החודשית.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2 class="section-title">7. יתרונות תחרותיים</h2>
+      <ul>
+        <li>RTL מובנה בממשק וברכיבים.</li>
+        <li>Bundle גודל <200 KB אחרי Tree-shaking.</li>
+        <li>Components מודולריים ו-Configurable.</li>
+        <li>תיעוד API ו-SDK למפתחים.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2 class="section-title">8. תוכניות עתידיות</h2>
+      <ul>
+        <li>הוספת Marketplace לתבניות עיצוב.</li>
+        <li>ממשק מתכנתים (REST & GraphQL API).</li>
+        <li>כלי Advanced Marketing: Popups, Timers, A/B Testing.</li>
+        <li>פיתוח שיתוף קהילתי של תבניות ומשאבים.</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2 class="section-title">9. סטטוס נוכחי</h2>
+      <p>Client v1.0-alpha (Frontend יציב), Admin Dashboard v0.5-beta.  
+      פגישה שלישית עם הלקוח ל-Review שינויים מתוכננת בקרוב.</p>
+    </section>
+  </div>
+</body>
+</html>
